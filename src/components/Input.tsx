@@ -51,14 +51,18 @@ function Input() {
   };
 
   // Handle changes in SIP amount
-  const handleInvestmentChange = (value: number) => {
-    setSipAmount(value);
-    setInitialInvestment(value * monthsValue);
+  const handleInvestmentChange = (value: number | number[]) => {
+    if (typeof value === "number") {
+      setSipAmount(value);
+      setInitialInvestment(value * monthsValue);
+    }
   };
 
-  const handleMonthsChange = (value: number) => {
-    setMonthsValue(value);
-    setInitialInvestment(sipAmount * value);
+  const handleMonthsChange = (value: number | number[]) => {
+    if (typeof value === "number") {
+      setMonthsValue(value);
+      setInitialInvestment(sipAmount * value);
+    }
   };
 
   const getColorForMonths = () => {
