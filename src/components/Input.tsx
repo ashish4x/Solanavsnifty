@@ -82,6 +82,7 @@ function Input() {
       cumulativeValue = totalUnits * data[i].Price;
       chartData.push(cumulativeValue);
     }
+    console.log(chartData);
 
     return chartData;
   };
@@ -142,7 +143,7 @@ function Input() {
           color={getColorForMonths()}
           label="Months"
           showSteps={true}
-          maxValue={40}
+          maxValue={48}
           minValue={1}
           defaultValue={1}
           onChange={handleMonthsChange}
@@ -173,11 +174,11 @@ function Input() {
         </div>
       </div>
 
-      <div className=" p-8 m-4">
+      {/* <div className="  p-0 m-4">
         <ThemeProvider theme={darkTheme}>
           <LineChart
             className="dark"
-            width={400}
+            width={500}
             height={300}
             series={[
               { data: solChartData, label: "SOL" },
@@ -186,7 +187,7 @@ function Input() {
             xAxis={[{ scaleType: "point", data: xLabels }]}
           />
         </ThemeProvider>
-      </div>
+      </div> */}
     </div>
   );
 }
